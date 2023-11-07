@@ -1,21 +1,19 @@
 Feature('example');
 
-Scenario('Test 1', ({ I }) => {
-  I.amOnPage('http://example.com');
-  I.waitForElement('h1');
-  I.see('Example');
+Scenario('Login Test', ({ I }) => {
+  I.amOnPage('http://zero.webappsecurity.com/login.html');
+  I.waitForElement('#login_form');
+  I.fillField('#user_login', 'invalid-username');
+  I.fillField('#user_password', 'invalid-password');
+  I.click('input[type="submit"]');
+  I.waitForText('Login and/or password are wrong');
 });
 
-Scenario('Test 2', ({ I }) => {
+Scenario('Extract Text', async ({ I }) => {
   I.amOnPage('http://example.com');
-  I.dontSeeElement('.login-form');
-  I.seeInCurrentUrl('example.com');
-});
-
-Scenario('Test 3', ({ I }) => {
-  I.amOnPage('http://example.com');
-  I.waitForElement('h1');
-  I.see('Example');
-  I.dontSeeElement('.login-form');
-  I.seeInCurrentUrl('example.com');
+  I.refreshPage();
+  let text = await I.grabTextFrom('h1');
+  console.log(`Text: ${text}`); // prints "Example Domain"
+  let value = await I.grabValueFrom('h1');
+  console.log(`Value: ${value}`); // prints "Example Domain"
 });
