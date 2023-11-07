@@ -16,9 +16,14 @@ exports.config = {
       browser: 'chrome',
       show: false,
     },
+    CustomCommands: {
+      require: './customcommands_helper.js',
+    },
   },
   include: {
     I: './steps_file.js',
+
+    loginPagePage: './pages/LoginPage.js',
   },
   name: 'codeceptJsTestcafe',
 };
