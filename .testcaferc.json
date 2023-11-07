@@ -1,0 +1,14 @@
+{
+  "screenshots": {
+    "takeOnFails": true
+  },
+  "screenshotPath": "./screenshots",
+  "screenshotPathPattern": "${DATE}${TIME}/${FIXTURE}.png",
+  "browser": [
+    "chrome:headless",
+    "firefox:headless",
+    "edge:headless",
+    "chrome:emulator:iphone X",
+    "chrome:emulator:ipad"
+  ]
+}

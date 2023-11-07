@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "testcafe:browsers": "testcafe -c 5 --browser-list .testcaferc.json ./tests",
+    "test": "codeceptjs run --steps"
   },
   "repository": {
     "type": "git",
@@ -12,12 +13,13 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "UNLICENSED",
   "bugs": {
     "url": "https://github.com/Bergomezz/codeceptJsTestcafe/issues"
   },
   "homepage": "https://github.com/Bergomezz/codeceptJsTestcafe#readme",
   "dependencies": {
+    "@codeceptjs/configure": "^0.10.0",
     "codeceptjs": "^3.5.6",
     "prettier": "^3.0.3",
     "testcafe": "^3.3.0"
