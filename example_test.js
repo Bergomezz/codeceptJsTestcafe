@@ -1,5 +1,6 @@
 Feature('example');
 
+
 // Scenario('Login Test', ({ I }) => {
 //   I.amOnPage('http://zero.webappsecurity.com/login.html');
 //   I.waitForElement('#login_form');
@@ -23,4 +24,4 @@ Scenario('Page Object', ({ I, loginPagePage }) => {
   loginPagePage.goto();
   loginPagePage.fillForm();
   I.waitForText('Login and/or password are wrong');
-});
+
